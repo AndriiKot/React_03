@@ -1,5 +1,6 @@
 # My App React 03
 
+### ![React 03 v1.0.0](https://github.com/AndriiKot/React_03/blob/main/__demo__/images/img_v1_0_0.png)
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
