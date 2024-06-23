@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
+import "./Card/Card.css";
 import Card from "./Card/Card";
 
 function App() {
@@ -16,7 +17,7 @@ function App() {
   }, []);
 
   return (
-    <div>
+    <div className="cards-container">
       {posts.map((post) => (
         <Card
           key={post.id}
