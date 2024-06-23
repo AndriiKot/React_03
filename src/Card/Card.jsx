@@ -1,3 +1,7 @@
 ﻿export default function Card(props) {
-    return <div key={props.id} className="card">{props}</div>;
-}   
+  return (
+    <div className="card">
+      <div>Cars test</div>
+    </div>
+  );
+}

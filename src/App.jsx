@@ -6,8 +6,8 @@ function App() {
   const [posts, setPosts] = useState([]);
 
   const fetchPosts = async () => {
-    return fetch("https://jsonplaceholder.typicode.com/posts").then((response) =>
-      response.json()
+    return fetch("https://jsonplaceholder.typicode.com/posts").then(
+      (response) => response.json()
     );
   };
 
@@ -18,7 +18,12 @@ function App() {
   return (
     <div>
       {posts.map((post) => (
-        <Card post />
+        <Card
+          key={post.id}
+          title={post.title}
+          body={post.body}
+          userId={post.userId}
+        />
       ))}
     </div>
   );
