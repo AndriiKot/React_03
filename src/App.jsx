@@ -4,7 +4,7 @@ import "./App.css";
 function App() {
   const [posts, setPosts] = useState([]);
 
-  const fetchPosts = () => {
+  const fetchPosts = async () => {
     fetch("https://jsonplaceholder.typicode.com/posts")
       .then((response) => response.json())
       .then((json) => console.log(json));
