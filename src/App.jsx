@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
+import Card from "./Card/Card";
 
 function App() {
   const [posts, setPosts] = useState([]);
@@ -17,7 +18,7 @@ function App() {
   return (
     <div>
       {posts.map((post) => (
-        <div key={post.id}>{post.title}</div>
+        <Card post />
       ))}
     </div>
   );
