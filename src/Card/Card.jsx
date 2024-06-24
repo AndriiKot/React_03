@@ -1,6 +1,7 @@
-﻿export default function Card(props) {
+﻿import "./Card.css";
+
+export default function Card(props) {
   const { title, body } = props;
-  console.log("HI Card!")
   return (
     <div className="card">
       <h3>{title}</h3>

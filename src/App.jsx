@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-import "./Card/Card.css";
 import CardsList from "./Card/CardsList";
 
 function App() {
