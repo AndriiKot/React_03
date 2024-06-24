@@ -1,6 +1,6 @@
 ﻿export default function CardsList(props) {
-    // const { list } = props;
-    console.log("Hi!")
+    const { list } = props;
+    console.log(list)
 //   const { title, body } = props;
 //   return (
 //     <div className="card">
