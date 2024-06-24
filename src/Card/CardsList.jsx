@@ -1,5 +1,5 @@
 ﻿import Card from "./Card";
-import Loading from "./loading";
+import Loading from "../Loading/loading";
 
 export default function CardsList(props) {
   const { list } = props;
