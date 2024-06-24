@@ -1,5 +1,5 @@
 ﻿import Card from "./Card";
-import Loading from "../Loading/loading";
+import Loading from "../Loading/Loading";
 
 export default function CardsList(props) {
   const { list } = props;
@@ -7,12 +7,16 @@ export default function CardsList(props) {
     return <Loading />;
   }
 
-  return list.map((post) => (
-    <Card
-      key={post.id}
-      title={post.title}
-      body={post.body}
-      userId={post.userId}
-    />
-  ));
+  return (
+    <div className="cards-container">
+      {list.map((post) => (
+        <Card
+          key={post.id}
+          title={post.title}
+          body={post.body}
+          userId={post.userId}
+        />
+      ))}
+    </div>
+  );
 }
