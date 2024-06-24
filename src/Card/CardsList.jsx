@@ -1,10 +1,11 @@
 ﻿import Card from "./Card";
+import Loading from "./loading";
 
 export default function CardsList(props) {
   const { list } = props;
   if (!list) {
-    return console.log("HOt list");
-  } 
+    return <Loading />;
+  }
 
   return list.map((post) => (
     <Card
