@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import "./Card/Card.css";
-import Card from "./Card/Card";
+import CardsList from "./Card/CardsList";
 
 function App() {
   const [posts, setPosts] = useState([]);
@@ -15,17 +15,9 @@ function App() {
   useEffect(() => {
     fetchPosts().then((data) => setPosts(data));
   }, []);
-
   return (
     <div className="cards-container">
-      {posts.map((post) => (
-        <Card
-          key={post.id}
-          title={post.title}
-          body={post.body}
-          userId={post.userId}
-        />
-      ))}
+      <CardsList />
     </div>
   );
 }
