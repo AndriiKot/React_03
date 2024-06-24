@@ -6,12 +6,9 @@ import FetchPosts from "./FetchPosts/FetchPosts";
 function App() {
   const [posts, loading] = FetchPosts();
 
-  console.log(posts, loading);
   if (loading) {
-    console.log("HI!");
     return <Loading />;
   } else {
-    console.log("Bye!");
     return <CardsList list={posts} />;
   }
 }
