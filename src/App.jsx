@@ -16,7 +16,7 @@ function App() {
   }, []);
   return (
     <div className="cards-container">
-      <CardsList list={posts} />
+      <CardsList  />
     </div>
   );
 }
