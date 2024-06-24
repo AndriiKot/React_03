@@ -1,13 +1,17 @@
-﻿export default function CardsList(props) {
-    const { list } = props;
-    console.log(list)
-//   const { title, body } = props;
-//   return (
-//     <div className="card">
-//       <h3>{title}</h3>
-//       <p>{body}</p>
-//     </div>
-//   );
+﻿import Card from "./Card";
+
+export default function CardsList(props) {
+  const { list } = props;
+  console.log(list);
+  console.log(Card)
+
+  //   const { title, body } = props;
+  //   return (
+  //     <div className="card">
+  //       <h3>{title}</h3>
+  //       <p>{body}</p>
+  //     </div>
+  //   );
 }
 
 // {
