@@ -5,15 +5,14 @@ import FetchPosts from "./FetchPosts/FetchPosts";
 
 function App() {
   const [posts, loading, error] = FetchPosts();
-  console.log(error)
+  console.log(error);
   if (loading) {
-    return <Loading />;
-  } else {
-    if (error) {
-      return <div>Error: {error.message}</div>;
-    }
-    return <CardsList list={posts} />;
+    <Loading />;
   }
+  if (error) {
+    setTimeout(() => <div>Error: {error.message}</div>, 4000);
+  }
+  return <CardsList list={posts} />;
 }
 
 export default App;
