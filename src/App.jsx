@@ -4,8 +4,8 @@ import Loading from "./Loading/Loading";
 import FetchPosts from "./FetchPosts/FetchPosts";
 
 function App() {
-  const [posts, loading] = FetchPosts();
-
+  const [posts, loading, error] = FetchPosts();
+  console.log(error)
   if (loading) {
     return <Loading />;
   } else {
