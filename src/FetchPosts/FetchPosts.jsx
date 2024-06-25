@@ -7,29 +7,23 @@ export default function FetchPosts() {
 
   const fetchPosts = async () => {
     try {
-      const res = await fetch("https://jsonplaceholder.typicode.com/post");
+      const res = await fetch("https://jsonplaceholder.typicode.com/posts");
       if (!res.ok) {
         throw new Error("Failed to fetch posts");
       }
       const data = await res.json();
       return data;
     } catch (error) {
-      // console.error("Error fetching posts:", error);
       setError(error);
+    } finally {
+      setLoading(false);
     }
   };
 
-  // const fetchPosts = async () => {
-  //   return fetch("https://jsonplaceholder.typicode.com/posts").then(
-  //     (response) => response.json()
-  //   );
-  // };
 
   useEffect(() => {
     setLoading(true);
-    fetchPosts()
-      .then((data) => setPosts(data))
-      .then(() => setLoading(false));
+    fetchPosts().then((data) => setPosts(data));
   }, []);
 
   return [posts, loading, error];
