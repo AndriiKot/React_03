@@ -4,15 +4,13 @@ import Loading from "./Loading/Loading";
 import FetchPosts from "./FetchPosts/FetchPosts";
 
 function App() {
-  const [posts, loading, error] = FetchPosts();
-  console.log(error);
+  const [posts, loading] = FetchPosts();
+
   if (loading) {
-    <Loading />;
+    return <Loading />;
+  } else {
+    return <CardsList list={posts} />;
   }
-  if (error) {
-    setTimeout(() => <div>Error: {error.message}</div>, 4000);
-  }
-  return <CardsList list={posts} />;
 }
 
 export default App;
