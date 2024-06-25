@@ -2,7 +2,7 @@
 
 export default function FetchPosts() {
   const [posts, setPosts] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   const fetchPosts = async () => {
@@ -20,9 +20,7 @@ export default function FetchPosts() {
     }
   };
 
-
   useEffect(() => {
-    setLoading(true);
     fetchPosts().then((data) => setPosts(data));
   }, []);
 
