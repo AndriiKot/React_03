@@ -7,7 +7,7 @@ export default function FetchPosts() {
 
   const fetchPosts = async () => {
     try {
-      const res = await fetch("https://jsonplaceholder.typicode.com/posts");
+      const res = await fetch("https://jsonplaceholder.typicode.com/post");
       if (!res.ok) {
         throw new Error("Failed to fetch posts");
       }

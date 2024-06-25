@@ -9,6 +9,9 @@ function App() {
   if (loading) {
     return <Loading />;
   } else {
+    if (error) {
+      return <div>Error: {error.message}</div>;
+    }
     return <CardsList list={posts} />;
   }
 }
