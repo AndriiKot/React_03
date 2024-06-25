@@ -2,20 +2,31 @@
 
 export default function FetchPosts() {
   const [posts, setPosts] = useState([]);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   const fetchPosts = async () => {
-    return fetch("https://jsonplaceholder.typicode.com/posts").then(
-      (response) => response.json()
-    );
+    try {
+      const response = await fetch(
+        "https://jsonplaceholder.typicode.com/posts"
+      );
+      if (!response.ok) {
+        throw new Error("Failed to fetch posts");
+      }
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      console.error("Error fetching posts:", error);
+      setError(error);
+    }
   };
 
   useEffect(() => {
-    setLoading(true);
     fetchPosts()
       .then((data) => setPosts(data))
       .then(() => setLoading(false));
   }, []);
+  
 
-  return [posts, loading];
+  return [posts, loading, error];
 }

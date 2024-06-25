@@ -4,13 +4,19 @@ import Loading from "./Loading/Loading";
 import FetchPosts from "./FetchPosts/FetchPosts";
 
 function App() {
-  const [posts, loading] = FetchPosts();
+  const [posts, loading, error] = FetchPosts();
 
   if (loading) {
     return <Loading />;
-  } else {
-    return <CardsList list={posts} />;
   }
+  if (error) {
+    return <p>Error: {error.message}</p>;
+  }
+  console.log(posts);
+  if (posts.length == 0) {
+    return <p>No posts found.</p>;
+  }
+  return <CardsList list={posts} />;
 }
 
 export default App;
