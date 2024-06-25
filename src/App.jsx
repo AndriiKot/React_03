@@ -12,10 +12,11 @@ function App() {
   if (error) {
     return <p>Error: {error.message}</p>;
   }
-  console.log(posts);
+
   if (posts.length == 0) {
     return <p>No posts found.</p>;
   }
+
   return <CardsList list={posts} />;
 }
 
