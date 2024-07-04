@@ -1,4 +1,5 @@
-# My App React 03
+# React 03   (Fetch API)
+## Posts App
 
 <div class="logos">
   <span class="React">
